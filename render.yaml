@@ -3,7 +3,7 @@ services:
     name: unofficial-fun-department-backend
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm install --include=dev
     startCommand: npm run server
     envVars:
       - key: NODE_ENV
@@ -12,3 +12,4 @@ services:
         value: 3001
       - key: CLIENT_ORIGIN
         value: '*'
+
