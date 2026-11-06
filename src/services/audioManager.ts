@@ -54,7 +54,7 @@ class AudioManagerService {
 
   public subscribe(listener: AudioManagerListener): () => void {
     this.listeners.add(listener);
-    listener.onAmbientStateChange(this.ambientPlaying, this.ambientAvailable);
+    listener.onAmbientStateChange(this.isAmbientActive(), this.ambientAvailable);
     listener.onVolumeChange(this.currentVolume);
     listener.onPlaybackStateChange(this.activePlaybackAudio !== null && !this.activePlaybackAudio.paused, this.activePlaybackId || undefined);
     if (listener.onAmbientTimeUpdate) {
@@ -67,8 +67,9 @@ class AudioManagerService {
   }
 
   private notifyAmbient(): void {
+    const active = this.isAmbientActive();
     for (const l of this.listeners) {
-      l.onAmbientStateChange(this.ambientPlaying, this.ambientAvailable);
+      l.onAmbientStateChange(active, this.ambientAvailable);
     }
   }
 
@@ -92,7 +93,7 @@ class AudioManagerService {
   }
 
   public async toggleAmbient(): Promise<void> {
-    if (this.ambientPlaying) {
+    if (this.isAmbientActive()) {
       this.pauseAmbient();
     } else {
       await this.playAmbient();
@@ -103,8 +104,6 @@ class AudioManagerService {
     // Stop any active preview/playback before starting ambient
     this.stopPlayback();
     this.userPausedAmbient = false;
-    this.ambientPlaying = true;
-    this.notifyAmbient();
 
     const ctx = this.initAudioContext();
     if (ctx.state === 'suspended') {
@@ -112,6 +111,7 @@ class AudioManagerService {
     }
 
     let playedAudioTag = false;
+    let playedSynth = false;
 
     // Try HTML Audio element with Cowpoke ambient music
     if (!this.ambientAudio) {
@@ -140,6 +140,16 @@ class AudioManagerService {
       this.ambientAudio.addEventListener('durationchange', () => {
         this.notifyAmbientTime();
       });
+      this.ambientAudio.addEventListener('play', () => {
+        this.ambientPlaying = true;
+        this.notifyAmbient();
+      });
+      this.ambientAudio.addEventListener('pause', () => {
+        if (this.synthAmbientOscillators.length === 0) {
+          this.ambientPlaying = false;
+          this.notifyAmbient();
+        }
+      });
     }
 
     try {
@@ -149,22 +159,30 @@ class AudioManagerService {
       playedAudioTag = true;
 
       // If user paused while the play promise was resolving, pause immediately
-      if (!this.ambientPlaying) {
+      if (this.userPausedAmbient) {
         this.ambientAudio.pause();
+        this.ambientPlaying = false;
+        this.notifyAmbient();
         return;
       }
+      this.ambientPlaying = true;
     } catch {
       this.ambientPlayPromise = null;
       playedAudioTag = false;
+      this.ambientPlaying = false;
     }
 
     // Stop synth so both are never playing together
     this.stopSynthAmbient();
 
-    if (!playedAudioTag && this.ambientPlaying) {
-      this.startSynthAmbient();
+    if (!playedAudioTag && !this.userPausedAmbient) {
+      if (this.audioCtx && this.audioCtx.state === 'running') {
+        this.startSynthAmbient();
+        playedSynth = true;
+      }
     }
 
+    this.ambientPlaying = (playedAudioTag || playedSynth) && !this.userPausedAmbient;
     this.notifyAmbient();
 
     // Media Session API
@@ -281,7 +299,16 @@ class AudioManagerService {
   }
 
   public isAmbientActive(): boolean {
-    return this.ambientPlaying;
+    if (!this.ambientPlaying) {
+      return false;
+    }
+    if (this.ambientAudio && !this.ambientAudio.paused) {
+      return true;
+    }
+    if (this.synthAmbientOscillators.length > 0 && this.audioCtx?.state === 'running') {
+      return true;
+    }
+    return false;
   }
 
   public isUserPausedAmbient(): boolean {

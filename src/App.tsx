@@ -44,20 +44,30 @@ const AppContent: React.FC = () => {
 
     // Browser autoplay policy handler: starts once on first user interaction if not paused
     const startAudioOnInteraction = (e: Event) => {
-      // Remove all interaction listeners immediately so it never fires again
-      window.removeEventListener('pointerdown', startAudioOnInteraction);
-      window.removeEventListener('touchstart', startAudioOnInteraction);
-      window.removeEventListener('click', startAudioOnInteraction);
-
-      // If user tapped a button, control, or link (e.g. Pause, Stop, Volume), don't trigger ambient autoplay
-      const target = e.target as HTMLElement | null;
-      if (target?.closest('button') || target?.closest('input') || target?.closest('a')) {
+      if (audioManager.isUserPausedAmbient()) {
         return;
       }
 
-      if (!audioManager.isUserPausedAmbient() && !audioManager.isAmbientActive()) {
-        audioManager.playAmbient().catch(() => {});
+      if (audioManager.isAmbientActive()) {
+        window.removeEventListener('pointerdown', startAudioOnInteraction);
+        window.removeEventListener('touchstart', startAudioOnInteraction);
+        window.removeEventListener('click', startAudioOnInteraction);
+        return;
       }
+
+      // If user tapped a specific ambient control button inside the audio player, let the button's own click handler execute
+      const target = e.target as HTMLElement | null;
+      if (target?.closest('aside[aria-label="Ambient Music Player"]')) {
+        return;
+      }
+
+      audioManager.playAmbient().then(() => {
+        if (audioManager.isAmbientActive()) {
+          window.removeEventListener('pointerdown', startAudioOnInteraction);
+          window.removeEventListener('touchstart', startAudioOnInteraction);
+          window.removeEventListener('click', startAudioOnInteraction);
+        }
+      }).catch(() => {});
     };
 
     window.addEventListener('pointerdown', startAudioOnInteraction);

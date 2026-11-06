@@ -15,7 +15,7 @@ export class TruthOrDareSocketClient {
       return this.socket;
     }
 
-    const socketUrl = import.meta.env.VITE_SOCKET_URL || window.location.origin;
+    const socketUrl = (import.meta.env.VITE_SOCKET_URL || window.location.origin).replace(/\/+$/, '');
 
     this.socket = io(socketUrl, {
       auth: {

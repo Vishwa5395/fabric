@@ -1,6 +1,6 @@
 import { GameSessionReport } from '../types/truthOrDare';
 
-const API_BASE = import.meta.env.VITE_API_URL || '';
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
 
 export async function checkRoomInfo(roomCode: string): Promise<{
   roomCode: string;

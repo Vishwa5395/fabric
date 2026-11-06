@@ -231,5 +231,37 @@
       "ytMusic": "Naina Da Kya Kasoor Andhadhun Amit Trivedi",
       "jioSaavn": "Naina Da Kya Kasoor Andhadhun Amit Trivedi"
     }
+  },
+  {
+    "id": "song-thinking-of-you",
+    "title": "Thinking of You",
+    "filmOrArtist": "AP Dhillon",
+    "album": "Thinking of You - Single",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/01/6c/0b/016c0b7d-46c3-5c63-a124-278e42e2dc30/26UMGIM14087.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/68/03/b3/6803b3dd-15cd-48b9-bdeb-08496dff8933/mzaf_12911866890123547930.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/us/album/thinking-of-you/1874128049?i=1874128053",
+    "youtubeQuery": "Thinking of You AP Dhillon",
+    "verified": true,
+    "searchTerms": {
+      "spotify": "Thinking of You AP Dhillon",
+      "ytMusic": "Thinking of You AP Dhillon",
+      "jioSaavn": "Thinking of You AP Dhillon"
+    }
+  },
+  {
+    "id": "song-american-pie",
+    "title": "American Pie",
+    "filmOrArtist": "Don McLean",
+    "album": "American Pie",
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1a/54/65/1a546518-5709-5c11-3f30-90528331fbf6/15UMGIM65659.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/dd/79/63dd791d-7e2e-1d3a-f2fa-01c5be6b9d5e/mzaf_8148438283557855281.plus.aac.p.m4a",
+    "appleUrl": "https://music.apple.com/us/album/american-pie-full-length-version/1440834532?i=1440834619",
+    "youtubeQuery": "American Pie Don McLean",
+    "verified": true,
+    "searchTerms": {
+      "spotify": "American Pie Don McLean",
+      "ytMusic": "American Pie Don McLean",
+      "jioSaavn": "American Pie Don McLean"
+    }
   }
 ]
