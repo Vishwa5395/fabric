@@ -1,0 +1,318 @@
+[
+  {
+    "id": "DARE-001",
+    "prompt": "Hum your favourite song for 10 seconds without using any lyrics.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-002",
+    "prompt": "Give a 15-second breaking-news report about Dora's missing mother.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-003",
+    "prompt": "Invent three ridiculous uses for the nearest ordinary object.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-004",
+    "prompt": "Record a dramatic 10-second advertisement for your water bottle.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-005",
+    "prompt": "Say a tongue twister three times without getting confused: 'Khadag Singh ke khadakne se khadakti hain khidkiyan'.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-006",
+    "prompt": "Apne favourite cartoon character ki awaaz mein ek dramatic dialogue bolo.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-007",
+    "prompt": "Camera ke saamne 10 second tak sabse serious, expressionless robotic face bana kar dikhao.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-008",
+    "prompt": "Do 10 jumping jacks or 5 quick stretches right now to defeat your daily aalas.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-009",
+    "prompt": "Record a 15-second emotional apology to your phone's battery for overworking it.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-010",
+    "prompt": "Show your best signature victory dance move for 10 seconds.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-011",
+    "prompt": "Koshish karo agle 30 seconds tak 'haan' ya 'yes' bole bina sabhi sawaalon ka jawab socho.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-012",
+    "prompt": "Rapidly repeat: 'Pake ped par paka papita, paka ped ya paka papita' 3 times fast!",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-013",
+    "prompt": "Record a 10-second weather forecast predicting heavy rainfall of chai and samosas.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-014",
+    "prompt": "Take a deep breath, drink a full glass of water, and confirm completion.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-015",
+    "prompt": "Speak like a strict school teacher giving homework for the next 15 seconds.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-016",
+    "prompt": "Demonstrate your best slow-motion matrix dodge move on camera for 10 seconds.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-017",
+    "prompt": "Say five positive compliments to yourself out loud right now.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-018",
+    "prompt": "Record an authentic dramatic laugh like a Bollywood supervillain.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-019",
+    "prompt": "Show three different funny facial expressions back-to-back: Surprised, Confused, and Heroic.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-020",
+    "prompt": "Put a book or notebook on your head and walk 5 steps without letting it fall.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-021",
+    "prompt": "Sing the chorus of your favourite Bollywood retro song in opera style.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-022",
+    "prompt": "Act out eating an imaginary extra spicy chilli without saying any words for 10 seconds.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-023",
+    "prompt": "Tidy up three random objects on your desk or room right now.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-024",
+    "prompt": "Give a 15-second motivational speech explaining why overthinking is an Olympic sport.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-025",
+    "prompt": "Give a 10-second silent film style mime acting performance on camera.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-026",
+    "prompt": "Write down a one-word goal for today on a piece of paper and smile.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-027",
+    "prompt": "Repeat: 'Unth uncha, unth ki peeth unchi, unchi poonchh unth ki' 3 times fast without stuttering!",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-028",
+    "prompt": "Hold a salute for 10 seconds straight with intense dramatic Bollywood movie eyes.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-029",
+    "prompt": "Whisper a secret motivational message to yourself and take a relaxed breath.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-030",
+    "prompt": "Commentate on your own breathing as if you are a live cricket match commentator.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-031",
+    "prompt": "Do an exaggerated slow-motion celebratory fist pump on camera for 10 seconds.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-032",
+    "prompt": "Check your posture right now and sit completely straight for the next 2 minutes.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-033",
+    "prompt": "Record a 15-second speech presenting the 'World's Best Mumma's Boy Award'.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-034",
+    "prompt": "Show your best catwalk fashion runway walk on video for 10 seconds.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-035",
+    "prompt": "Blink your eyes 15 times rapidly and then look at the furthest point in your room.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-036",
+    "prompt": "Speak continuously for 15 seconds without using the words 'aur', 'and', or 'par'.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-037",
+    "prompt": "Show your best impression of someone who just stepped on a piece of Lego on camera.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-038",
+    "prompt": "Balance a pen or spoon on your finger or nose for 5 continuous seconds.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-039",
+    "prompt": "Say 'Omfooooo dharrate kaat rahi hai' in three completely different emotional tones: sad, angry, and excited.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  },
+  {
+    "id": "DARE-040",
+    "prompt": "Give a 10-second infomercial pitch demonstrating why your pillow is a masterpiece of modern engineering.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-041",
+    "prompt": "Stretch both arms up towards the ceiling and yawn loudly with full drama.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-042",
+    "prompt": "Hum the theme song of your favourite childhood cartoon show for 10 seconds.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-043",
+    "prompt": "Smile your widest 100-watt smile at the camera without blinking for 10 seconds.",
+    "evidenceType": "video",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 15
+  },
+  {
+    "id": "DARE-044",
+    "prompt": "Name five things around you that are red or graphite coloured in under 5 seconds.",
+    "evidenceType": "none",
+    "evidenceRequired": false,
+    "maxDurationSeconds": null
+  },
+  {
+    "id": "DARE-045",
+    "prompt": "Speak like an ultra-enthusiastic YouTuber asking viewers to like, share, and subscribe to life for 15 seconds.",
+    "evidenceType": "audio",
+    "evidenceRequired": true,
+    "maxDurationSeconds": 20
+  }
+]
+

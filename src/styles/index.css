@@ -1,0 +1,373 @@
+@import './tokens.css';
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/600.css';
+@import '@fontsource/manrope/700.css';
+@import '@fontsource/manrope/800.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/noto-sans-devanagari/400.css';
+@import '@fontsource/noto-sans-devanagari/600.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-graphite);
+  line-height: 1.25;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid var(--color-cobalt);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-graphite);
+  background-color: var(--bg-surface);
+  border: var(--border-width) solid var(--color-graphite);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+}
+
+/* Common utility styles conforming to tokens */
+.app-container {
+  width: 100%;
+  max-width: var(--container-max-width, 640px);
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Tablet optimizations: realme Pad 2 Lite (~800px portrait, ~1200px landscape) */
+@media (min-width: 641px) {
+  :root {
+    --container-max-width: 800px;
+  }
+
+  .app-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --container-max-width: 960px;
+  }
+
+  .app-container {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+/* Phone optimizations: realme 14x (~390px - 412px viewport) */
+@media (max-width: 425px) {
+  :root {
+    --container-max-width: 100%;
+  }
+
+  .card {
+    padding: 14px 12px;
+  }
+
+  .btn {
+    padding: 9px 12px;
+    font-size: 0.88rem;
+  }
+
+  /* Prevent auto-zoom on input focus */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+.card {
+  background: var(--bg-card);
+  border: var(--border-width) solid var(--color-graphite);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-retro);
+  padding: var(--space-md);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  min-height: var(--min-touch-target);
+  padding: 10px 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: var(--border-width) solid var(--color-graphite);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-retro-sm);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+}
+
+.btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: var(--shadow-retro-hover);
+}
+
+.btn-primary {
+  background-color: var(--color-lime);
+  color: var(--color-graphite);
+}
+
+.btn-cobalt {
+  background-color: var(--color-cobalt);
+  color: #FFFFFF;
+  font-size: 1.15rem; /* >= 18.66px per prompt */
+  font-weight: 800;
+}
+
+.btn-coral {
+  background-color: var(--color-coral);
+  color: var(--color-graphite);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-graphite);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-graphite);
+}
+
+.badge-lime {
+  background-color: var(--color-lime);
+  color: var(--color-graphite);
+}
+
+.badge-coral {
+  background-color: var(--color-coral);
+  color: var(--color-graphite);
+}
+
+.badge-cobalt {
+  background-color: var(--color-cobalt);
+  color: #FFFFFF;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* GIF-style animated sticker keyframes (Stepped frame-by-frame motion, exactly like Behance / Giphy GIF stickers) */
+.bg-floating-heart {
+  transform-origin: center center;
+  animation-timing-function: steps(1) !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+.bg-floating-heart.anim-wobble {
+  animation-name: gifStickerWobble;
+}
+
+.bg-floating-heart.anim-bounce {
+  animation-name: gifStickerBounce;
+}
+
+.bg-floating-heart.anim-jiggle {
+  animation-name: gifStickerJiggle;
+}
+
+@keyframes gifStickerWobble {
+  0% {
+    transform: rotate(calc(var(--base-rot, 0deg) - 8deg)) scale(1);
+  }
+  25% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 10deg)) scale(1.18) translate(2px, -3px);
+  }
+  50% {
+    transform: rotate(calc(var(--base-rot, 0deg) - 6deg)) scale(0.96) translate(-2px, 1px);
+  }
+  75% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 8deg)) scale(1.22) translate(1px, 2px);
+  }
+  100% {
+    transform: rotate(calc(var(--base-rot, 0deg) - 8deg)) scale(1);
+  }
+}
+
+@keyframes gifStickerBounce {
+  0% {
+    transform: rotate(var(--base-rot, 0deg)) scale(1, 1);
+  }
+  25% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 7deg)) scale(1.2, 0.92) translate(0, -3px);
+  }
+  50% {
+    transform: rotate(calc(var(--base-rot, 0deg) - 5deg)) scale(0.9, 1.15) translate(0, 1px);
+  }
+  75% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 8deg)) scale(1.16, 1.06) translate(0, -2px);
+  }
+  100% {
+    transform: rotate(var(--base-rot, 0deg)) scale(1, 1);
+  }
+}
+
+@keyframes gifStickerJiggle {
+  0% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 9deg)) scale(1.04);
+  }
+  20% {
+    transform: rotate(calc(var(--base-rot, 0deg) - 10deg)) scale(1.15) translate(-3px, -2px);
+  }
+  40% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 7deg)) scale(0.94) translate(2px, 2px);
+  }
+  60% {
+    transform: rotate(calc(var(--base-rot, 0deg) - 8deg)) scale(1.22) translate(-2px, 2px);
+  }
+  80% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 5deg)) scale(1.02) translate(1px, -1px);
+  }
+  100% {
+    transform: rotate(calc(var(--base-rot, 0deg) + 9deg)) scale(1.04);
+  }
+}
+
+@media (max-width: 600px) {
+  .bg-floating-heart {
+    max-width: 30px !important;
+    max-height: 30px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-floating-heart {
+    animation: none !important;
+  }
+}
+
+/* Retro Draggable Audio Seeker Slider */
+.retro-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #E8E5DC;
+  border: 1.5px solid var(--color-graphite);
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 6px 0;
+  transition: background 0.15s ease;
+}
+
+.retro-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-lime);
+  border: 2px solid var(--color-graphite);
+  box-shadow: 1.5px 1.5px 0px var(--color-graphite);
+  cursor: grab;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.retro-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+  background: #D8F285;
+}
+
+.retro-range-slider::-webkit-slider-thumb:active {
+  transform: scale(1.05);
+  cursor: grabbing;
+  box-shadow: 0.5px 0.5px 0px var(--color-graphite);
+}
+
+.retro-range-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-lime);
+  border: 2px solid var(--color-graphite);
+  box-shadow: 1.5px 1.5px 0px var(--color-graphite);
+  cursor: grab;
+}
+
+.retro-range-slider::-moz-range-thumb:active {
+  cursor: grabbing;
+}
+
+.retro-range-slider-cobalt::-webkit-slider-thumb {
+  background: var(--color-cobalt);
+}
+
+.retro-range-slider-cobalt::-moz-range-thumb {
+  background: var(--color-cobalt);
+}
+
+
+
